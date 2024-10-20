@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HELLO !</title>
+		<meta charset="utf-8">
+		<font face="Arial">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"> </script>
+	</head>
+	<body>
+		<div id="grid-main">
+			<div class="user">
+				<p class="title"> MP1 ~</p>
+				<p> Hi {{ Cont["username"] }} </p>
+			</div>
+			<div class="navigation">
+				<a href="http://127.0.0.1:5000/">
+				<p class="title-s">⮚ HOME ⮘</p>
+				</a>
+				{% for i in Cont["grades"].keys() %}
+				<a href="http://127.0.0.1:5000/DS/{{i}}">
+				<p class="title-ss">➤ {{ i }}</p>
+				</a>
+				{% endfor %}
+			</div>
+
+			<div class="grades">
+				<p class="title-s">{{DS}}</p>
+				{% for i in range(Cont["grades"][DS][1]) %}
+					<p class="paragraph"> Classement: {{ i+1 }} | Note : {{ Cont["grades"][DS][0][i][0] }} </p>
+				{% endfor %}
+			</div>
+			<div class="add-grade">
+					<p class="title-ss">Rajoutes une note</p>
+				<form action="#" method="post">
+					<input id="grade" type="text" name="grade" placeholder="mets ta note" value="{{ request.form['grade'] }}" autocomplete="off">
+					<input id="id_grade" type="text" name="id_grade" placeholder="ton ID" value="{{ request.form['id_grade'] }}" autocomplete="off">
+					<select name="DS_add">
+						<option disabled selected hidden>DS</option>
+						{% for i in Cont["grades"].keys() %}
+						<option  value="{{ i }}">{{ i }}</option>
+						{% endfor %}
+					</select>
+					<button type="submit">Ajouter la note</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

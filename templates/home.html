@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HELLO !</title>
+		<meta charset="utf-8">
+		<font face="Arial">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"> </script>
+	</head>
+	<body>
+		<div id="grid-main">
+			<div class="user">
+				<p class="title"> MP1 ~</p>
+				<p> Hi {{ Cont["username"] }} </p>
+			</div>
+			<div class="navigation">
+				<a href="http://127.0.0.1:5000/">
+				<p class="title-s">⮚ HOME ⮘</p>
+				</a>
+				{% for i in Cont["grades"].keys() %}
+				<a href="http://127.0.0.1:5000/DS/{{i}}">
+				<p class="title-ss">➤ {{ i }}</p>
+				</a>
+				{% endfor %}
+			</div>
+			<div class="home">
+				<div class=""> 
+					<p class="title-s">Dernieres updates !</p>
+					<p class="paragraph">➤ le site des notes est en cours de développement</p>
+				</div>
+			</div>
+			<div class="add-grade">
+					<button>Ajouter une note</button>
+				</form>
+			</div>
+
+		</div>
+	</body>
+</html>

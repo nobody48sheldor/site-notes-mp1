@@ -1,0 +1,148 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	color: white;
+}
+
+div#grid-main {
+	background-size: cover;
+	height:100vh;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	gap: 20pt;
+	width:100vw;
+	display: grid;
+}
+
+div.user{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-area: 1 / 2 / 2 / 4;
+	/* background-color: orange; */
+	font-size: 3vh;
+}
+
+div.navigation {
+	margin-left: 20pt;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	grid-area: 2 / 1 / 6 / 2;
+	/* background-color: orange; */
+	font-size: 2vh;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+}
+
+div.add-grade{
+	margin-right: 20pt;
+	display: flex;
+	flex-direction: vertical;
+	align-items: center;
+	justify-content: center;
+	grid-area: 2 / 4 / 4 / 4;
+	/* background-color: orange; */
+	font-size: 2vh;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+}
+
+
+div.add-grade p {
+	display: flex;
+	flex-direction: vertical;
+}
+
+div.home {
+	align-items: center;
+	justify-content: center;
+	grid-area: 2 / 2 / 2 / 4;
+	/* background-color: orange; */
+	font-size: 2vh;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+}
+
+div.home div {
+	margin: 10pt;
+}
+
+div.grades {
+	align-items: center;
+	justify-content: center;
+	grid-area: 2 / 2 / 2 / 4;
+	/* background-color: orange; */
+	font-size: 2vh;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+}
+
+div.grades p {
+	display: flex;
+	flex-direction: vertical;
+	justify-content: center;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+input {
+	margin: 10pt;
+	padding: 5pt 8pt;
+	box-sizing: border-box;
+}
+
+button {
+	margin: 4pt;
+	padding: 5pt 8pt;
+	box-sizing: border-box;
+	color: white;
+	background-color: gray;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+
+}
+
+p.title {
+	margin-right: 1vw;
+	margin-left: 1vw;
+	font-size: 5vh;
+}
+
+p.title-s {
+	display: flex;
+	flex-direction: vertical;
+	justify-content: center;
+	margin-right: 1vw;
+	margin-left: 1vw;
+	font-size: 4vh;
+}
+
+p.title-ss {
+	display: flex;
+	flex-direction: vertical;
+	justify-content: center;
+	margin-right: 1vw;
+	margin-left: 1vw;
+	font-size: 3vh;
+}
+
+p.paragraph {
+	margin-right: 1vw;
+	font-size: 2vh;
+}
