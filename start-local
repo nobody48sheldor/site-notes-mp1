@@ -1,2 +1,2 @@
-export FLASK_APP=/home/arnaud/Desktop/school/5-2/site_notes/backend.py;
+export FLASK_APP=/home/arnaud/Desktop/school/5-2/site-notes-mp1/backend.py;
 flask run
