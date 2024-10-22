@@ -9,7 +9,7 @@ div#grid-main {
 	background-size: cover;
 	height:100vh;
 	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(6, 1fr);
+	grid-template-rows: repeat(7, 1fr);
 	gap: 20pt;
 	width:100vw;
 	display: grid;
@@ -30,7 +30,7 @@ div.navigation {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	grid-area: 2 / 1 / 6 / 2;
+	grid-area: 2 / 1 / 7 / 2;
 	/* background-color: orange; */
 	font-size: 2vh;
 	border: solid;
@@ -79,7 +79,7 @@ div.home div {
 div.grades {
 	align-items: center;
 	justify-content: center;
-	grid-area: 2 / 2 / 2 / 4;
+	grid-area: 2 / 2 / 7 / 4;
 	/* background-color: orange; */
 	font-size: 2vh;
 	border: solid;
@@ -94,13 +94,44 @@ div.grades p {
 	justify-content: center;
 }
 
+div.fig {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-area: 4 / 4 / 7 / 5;
+	/* background-color: orange; */
+	font-size: 2vh;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+	margin-right: 20pt;
+}
+
+div.fig img {
+	margin:-8vw;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20pt;
+}
+
 a {
 	text-decoration: none;
 	color: white;
 }
 
 input {
-	margin: 10pt;
+	margin: 3pt;
+	margin-left: 10pt;
+	margin-right: 10pt;
+	padding: 5pt 8pt;
+	box-sizing: border-box;
+}
+
+select {
+	margin: 3pt;
+	margin-left: 10pt;
+	margin-right: 10pt;
 	padding: 5pt 8pt;
 	box-sizing: border-box;
 }
@@ -145,4 +176,10 @@ p.title-ss {
 p.paragraph {
 	margin-right: 1vw;
 	font-size: 2vh;
+}
+
+div.horizontal {
+	display: flex;
+	flex-direction: horizontal;
+	align-items: center;
 }
