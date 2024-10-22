@@ -26,9 +26,16 @@
 
 			<div class="grades">
 				<p class="title-s">{{DS}}</p>
-				{% for i in range(Cont["grades"][DS][1]) %}
-					<p class="paragraph"> Classement: {{ i+1 }} | Note : {{ Cont["grades"][DS][0][i][0] }} </p>
-				{% endfor %}
+			</div>
+			<div class="grades-grades">
+				<div class="grades-grades-grades">
+					{% for i in range(Cont["grades"][DS][1]) %}
+						<p class="paragraph"> Classement: {{ i+1 }} | Note : {{ Cont["grades"][DS][0][i][0] }} </p>
+					{% endfor %}
+				</div>
+				<div class="arrow-bottom">
+					<p class="bottom">⌄</p>
+				</div>
 			</div>
 			<div class="fig">
 				<img src="{{ url_for('static', filename=DS+'.png') }}" height=90%></img>

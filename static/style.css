@@ -86,12 +86,44 @@ div.grades {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
+	height:5fr;
 }
 
-div.grades p {
+div.grades-grades {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	padding-bottom: 0.5fr;
+	align-items: center;
+	justify-content: center;
+	grid-area: 3 / 2 / 7 / 4;
+	/* background-color: orange; */
+	font-size: 2vh;
+	border-radius: 20pt;
+}
+
+div.grades-grades-grades {
+	align-items: center;
+	justify-content: center;
+	grid-area: 1 / 1 / 6 / 2;
+	margin-top: 4vh;
+	height: 48vh;
+	overflow: auto;
+}
+
+div.grades-grades-grades p {
 	display: flex;
 	flex-direction: vertical;
 	justify-content: center;
+}
+
+div.arrow-bottom {
+	align-items: center;
+	justify-content: center;
+	grid-area: 6 / 1 / 7 / 2;
+	/* background-color: orange; */
+	font-size: 2vh;
+	border-radius: 20pt;
 }
 
 div.fig {
@@ -116,17 +148,37 @@ div.fig img {
 }
 
 a {
+	transition: 0.3s ease-in-out;
 	text-decoration: none;
 	color: white;
 }
 
+a:hover {
+	text-shadow: 0pt 0px 20pt white;
+}
+
 input {
+	transition: 0.3s ease-in-out;
 	margin: 3pt;
 	margin-left: 10pt;
 	margin-right: 10pt;
 	padding: 5pt 8pt;
 	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
 }
+
+input:focus {
+	
+	border-style: solid;
+	border-color: white;
+	border-width: 5pt;
+}
+
+input:hover {
+	box-shadow: 0pt 0px 80pt rgba(145, 92, 182, 1);
+}
+
 
 select {
 	margin: 3pt;
@@ -137,6 +189,7 @@ select {
 }
 
 button {
+	transition: 0.3s ease-in-out;
 	margin: 4pt;
 	padding: 5pt 8pt;
 	box-sizing: border-box;
@@ -149,6 +202,10 @@ button {
 
 }
 
+button:hover {
+	box-shadow: 0pt 0px 30pt rgba(145, 92, 182, 1);
+}
+
 p.title {
 	margin-right: 1vw;
 	margin-left: 1vw;
@@ -156,12 +213,17 @@ p.title {
 }
 
 p.title-s {
+	transition: 0.3s ease-in-out;
 	display: flex;
 	flex-direction: vertical;
 	justify-content: center;
 	margin-right: 1vw;
 	margin-left: 1vw;
 	font-size: 4vh;
+}
+
+p.title-s:hover {
+	text-shadow: 0pt 0px 30pt white;
 }
 
 p.title-ss {
@@ -176,6 +238,13 @@ p.title-ss {
 p.paragraph {
 	margin-right: 1vw;
 	font-size: 2vh;
+}
+
+p.bottom{
+	margin-bottom: 10pt;
+	text-align: center;
+	justify-content: bottom;
+	font-size: 5vh;
 }
 
 div.horizontal {

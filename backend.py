@@ -37,6 +37,7 @@ print(2*"\n",DBs,2*"\n")
 print(2*"\n",GRADES_DICT,2*"\n")
 
 def plot_data(db):
+	plt.clf()
 	arr_x = np.linspace(0,20,41)
 	arr_y = [0 for i in arr_x]
 	for i in Cont["grades"][db][0]:
@@ -46,7 +47,7 @@ def plot_data(db):
 	arr_y = np.array([None if i==0 else i for i in arr_y])
 	print(arr_y)
 	plt.xlim(0,20)
-	plt.ylim(0, m+2)
+	plt.ylim(0, m+1)
 	plt.scatter(arr_x, arr_y, color="red")
 	plt.plot(arr_x, arr_y0, color="blue")
 	plt.savefig("static/"+db+".png")
