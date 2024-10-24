@@ -19,7 +19,7 @@ div.user{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	grid-area: 1 / 2 / 2 / 4;
+	grid-area: 1 / 1 / 2 / 5;
 	/* background-color: orange; */
 	font-size: 3vh;
 }
@@ -128,22 +128,21 @@ div.arrow-bottom {
 
 div.fig {
 	display: flex;
-	align-items: center;
+	align-items: top;
 	justify-content: center;
 	grid-area: 4 / 4 / 7 / 5;
 	/* background-color: orange; */
 	font-size: 2vh;
-	border: solid;
-	border-width: 3pt;
-	border-color: white;
-	border-radius: 20pt;
 	margin-right: 20pt;
 }
 
-div.fig img {
-	margin:-8vw;
+img.figure {
+	height: 16vw;
 	justify-content: center;
 	align-items: center;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
 	border-radius: 20pt;
 }
 
@@ -158,6 +157,8 @@ a:hover {
 }
 
 input {
+	width: 80%;
+	height: 4vh;
 	transition: 0.3s ease-in-out;
 	margin: 3pt;
 	margin-left: 10pt;
@@ -169,10 +170,7 @@ input {
 }
 
 input:focus {
-	
-	border-style: solid;
-	border-color: white;
-	border-width: 5pt;
+	transform: scale(1.1);
 }
 
 input:hover {
@@ -181,11 +179,20 @@ input:hover {
 
 
 select {
+	transition: 0.3s ease-in-out;
+	height: 4vh;
+	width: 80%;
 	margin: 3pt;
 	margin-left: 10pt;
 	margin-right: 10pt;
 	padding: 5pt 8pt;
 	box-sizing: border-box;
+	font-size: 1vw
+}
+
+select:focus {
+	transform: scale(1.1);
+	box-shadow: 0pt 0px 80pt rgba(145, 92, 182, 1);
 }
 
 button {
@@ -209,7 +216,7 @@ button:hover {
 p.title {
 	margin-right: 1vw;
 	margin-left: 1vw;
-	font-size: 5vh;
+	font-size: 3vw;
 }
 
 p.title-s {
@@ -219,7 +226,7 @@ p.title-s {
 	justify-content: center;
 	margin-right: 1vw;
 	margin-left: 1vw;
-	font-size: 4vh;
+	font-size: 2vw;
 }
 
 p.title-s:hover {
@@ -232,19 +239,23 @@ p.title-ss {
 	justify-content: center;
 	margin-right: 1vw;
 	margin-left: 1vw;
-	font-size: 3vh;
+	font-size: 1.5vw;
 }
 
 p.paragraph {
 	margin-right: 1vw;
-	font-size: 2vh;
+	font-size: 1vw;
+}
+
+p.notes{
+	font-size: calc(1vh + 1vw);
 }
 
 p.bottom{
 	margin-bottom: 10pt;
 	text-align: center;
 	justify-content: bottom;
-	font-size: 5vh;
+	font-size: 3vw;
 }
 
 div.horizontal {

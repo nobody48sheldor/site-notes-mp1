@@ -11,7 +11,7 @@
 		<div id="grid-main">
 			<div class="user">
 				<p class="title"> MP1 ~</p>
-				<p> Hi, {{ Cont["usermessage"][0] }} </p>
+				<p class="title-s"> Hi, {{ Cont["usermessage"][0] }} </p>
 			</div>
 			<div class="navigation">
 				<a href="http://127.0.0.1:5000/">
@@ -30,7 +30,7 @@
 			<div class="grades-grades">
 				<div class="grades-grades-grades">
 					{% for i in range(Cont["grades"][DS][1]) %}
-						<p class="paragraph"> Classement: {{ i+1 }} | Note : {{ Cont["grades"][DS][0][i][0] }} </p>
+						<p class="notes"> Classement: {{ i+1 }} | Note : {{ Cont["grades"][DS][0][i][0] }} </p>
 					{% endfor %}
 				</div>
 				<div class="arrow-bottom">
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 			<div class="fig">
-				<img src="{{ url_for('static', filename=DS+'.png') }}" height=90%></img>
+				<img class="figure" src="{{ url_for('static', filename=DS+'.png') }}"></img>
 			</div>
 			<div class="add-grade">
 					<p class="title-ss">Rajoutes une note</p>
