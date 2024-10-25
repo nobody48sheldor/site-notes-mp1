@@ -2,8 +2,8 @@ import os
 import sys
 from flask import Flask, render_template, request, url_for, redirect
 from dotenv import load_dotenv
-import numpy as np
-import matplotlib.pyplot as plt
+#import numpy as np
+#import matplotlib.pyplot as plt
 
 plt.style.use('dark_background')
 
@@ -14,10 +14,10 @@ app = Flask(__name__)
 
 # init DB
 GRADES_DICT= {}
-DBs = [f[:-4] for f in os.listdir("../db/")]
+DBs = [f[:-4] for f in os.listdir("db/")]
 
 def get_data(db):
-	with open("../db/"+db+".csv") as database:
+	with open("static/db/"+db+".csv") as database:
 		L = database.readlines()
 		print(L, "dakldazkjkl")
 		if (L == []) or (L == ["\n"]):
@@ -26,7 +26,7 @@ def get_data(db):
 	return(data)
 
 def write_data(db, L):
-	with open("../db/"+db+".csv", "w") as database:
+	with open("static/db/"+db+".csv", "w") as database:
 		database.writelines([str(item[0])+";"+str(item[1])+"\n" for item in L] )
 
 for db in DBs:
@@ -36,6 +36,8 @@ for db in DBs:
 print(2*"\n",DBs,2*"\n")
 print(2*"\n",GRADES_DICT,2*"\n")
 
+
+"""
 def plot_data(db):
 	plt.clf()
 	arr_x = np.linspace(0,20,41)
@@ -51,7 +53,7 @@ def plot_data(db):
 	plt.scatter(arr_x, arr_y, color="red")
 	plt.plot(arr_x, arr_y0, color="blue")
 	plt.savefig("static/"+db+".png")
-	
+"""
 			
 	
 
@@ -79,7 +81,8 @@ def add_grade():
 		Cont["grades"][DS_add][0].reverse()
 		Cont["grades"][DS_add][1] += 1
 		write_data(DS_add, Cont["grades"][DS_add][0])
-		plot_data(DS_add)
+		#plot_data(DS_add)
+		os.system("python3 static/plotting.py '"+str(Cont["grades"][DS_add][0])+"' '"+DS_add+"'")
 	return( render_template("index.html", Cont=Cont, DS="DS-1-maths") )
 	
 
@@ -106,7 +109,8 @@ def get_and_post_grades(ds):
 		Cont["grades"][DS_add][0].reverse()
 		Cont["grades"][DS_add][1] += 1
 		write_data(DS_add, Cont["grades"][DS_add][0])
-		plot_data(DS_add)
+		#plot_data(DS_add)
+		os.system("python3 static/plotting.py '"+str(Cont["grades"][DS_add][0])+"' '"+DS_add+"'")
 	return(render_template("index.html", Cont=Cont, DS=str(ds)) )
 
 if __name__ == "__main__":
