@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HELLO !</title>
+		<meta charset="utf-8">
+		<font face="Arial">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"> </script>
+	</head>
+	<body>
+		<div id="grid-main">
+			<div class="user">
+				<p class="title"> MP1 ~</p>
+				<p> page de l'utilisateur d'id : {{user}}</p>
+			</div>
+			<div class="navigation">
+				<a href="http://127.0.0.1:5000/">
+				<p class="title-s">⮚ HOME ⮘</p>
+				</a>
+				{% for i in Cont["grades"].keys() %}
+				<a href="http://127.0.0.1:5000/DS/{{i}}">
+				<p class="title-ss">➤ {{ i }}</p>
+				</a>
+				{% endfor %}
+			</div>
+			<div class="stats">
+				<div class"wrapper">
+					{% for i in user_grade %}
+						<p class="notes"> {{i[0]}}/20 ~ {{i[1]}} </p>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="stats-fig">
+				<div class"wrapper">
+					<img class="figure-stat" src="{{ url_for('static', filename=user+'.png') }}"></img>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

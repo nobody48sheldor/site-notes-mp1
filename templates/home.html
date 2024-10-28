@@ -17,19 +17,19 @@
 				<a href="http://127.0.0.1:5000/">
 				<p class="title-s">⮚ HOME ⮘</p>
 				</a>
-				{% for i in Cont["grades"].keys() %}
-				<a href="http://127.0.0.1:5000/DS/{{i}}">
-				<p class="title-ss">➤ {{ i }}</p>
-				</a>
-				{% endfor %}
+				<div class="nav-wrapper">
+					{% for i in Cont["grades"].keys() %}
+						<a href="http://127.0.0.1:5000/DS/{{i}}">
+						<p class="title-ss">➤ {{ i }}</p>
+						</a>
+					{% endfor %}
+				</div>
 			</div>
-			<div class="home">
-				<div style:"overflow: auto" class=""> 
+				<div class="grade"> 
 					<p class="title-s">Dernieres updates !</p>
 					<div class="horizontal"> <p class="paragraph">➤ GitHub crée ! </p> <a href="https://github.com/nobody48sheldor/site-notes-mp1" style="color: red">~ github ~</a> </div>
 					<div class="horizontal"> <p class="paragraph">➤ Le site des notes est en cours de développement</p> </div>
 				</div>
-			</div>
 			<div class="add-grade">
 					<button onclick="window.open('http://google.com','_blank')">Comment ajouter une note ?</button>
 				</form>

@@ -44,7 +44,7 @@ def plot_data(data,db):
 	print(arr_y)
 	plt.xlim(0,20)
 	plt.ylim(0, m+1)
-	plt.title("distribution de : "+db, fontsize=20, color="white", fontweight='bold')
+	plt.title("distribution de : "+db, fontsize=30, color="white", fontweight='bold')
 	plt.bar(arr_x, arr_y0, width=0.4, align='center', color='blue', edgecolor='white', linewidth=1.4)
 	plt.savefig(static_path+db+".png")
 

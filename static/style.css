@@ -39,6 +39,15 @@ div.navigation {
 	border-radius: 20pt;
 }
 
+div.nav-wrapper p {
+	transition: 0.3s ease-in-out;
+}
+
+div.nav-wrapper p:hover {
+	transform: scale(1.2);
+}
+
+
 div.add-grade{
 	margin-right: 20pt;
 	display: flex;
@@ -63,7 +72,7 @@ div.add-grade p {
 div.home {
 	align-items: center;
 	justify-content: center;
-	grid-area: 2 / 2 / 2 / 4;
+	grid-area: 2 / 2 / 7 / 4;
 	/* background-color: orange; */
 	font-size: 2vh;
 	border: solid;
@@ -206,7 +215,6 @@ button {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
-
 }
 
 button:hover {
@@ -249,6 +257,9 @@ p.paragraph {
 
 p.notes{
 	font-size: calc(1vh + 1vw);
+	display: flex;
+	flex-direction: vertical;
+	justify-content: center;
 }
 
 p.bottom{
@@ -262,4 +273,97 @@ div.horizontal {
 	display: flex;
 	flex-direction: horizontal;
 	align-items: center;
+}
+
+div.stats {
+	display: flex;
+	flex-direction: vertical;
+	align-items: top;
+	justify-content: center;
+	grid-area: 3 / 2 / 7 / 3;
+	/* background-color: orange; */
+	overflow: auto;
+	height:4fr;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+
+}
+
+div.wrapper {
+	display: flex;
+	flex-direction: vertical;
+	align-items: top;
+	justify-content: center;
+	/* background-color: orange; */
+	overflow: auto;
+	height:4fr;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+
+}
+
+div.stats div.wrapper p {
+	display: flex;
+	flex-direction: vertical;
+	justify-content: center;
+}
+
+div.stats-fig {
+	display: flex;
+	flex-direction: vertical;
+	align-items: top;
+	justify-content: center;
+	grid-area: 2 / 3 / 7 / 5;
+	/* background-color: orange; */
+	overflow: auto;
+	height:4fr;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+}
+
+div.stats-fig div.wrapper p {
+	display: flex;
+	flex-direction: vertical;
+	justify-content: center;
+}
+
+img.figure-stat {
+	margin-top: 1.3vw;
+	display: flex;
+	height: 35vw;
+	justify-content: center;
+	align-items: center;
+}
+
+div.DS-stats {
+	display: flex;
+	flex-direction: horizontal;
+	align-items: center;
+	justify-content: center;
+	grid-area: 7 / 1 / 8 / 5;
+	/* background-color: orange; */
+	margin-right: 20pt;
+	margin-left: 20pt;
+	margin-bottom: 20pt;
+	overflow: auto;
+	height:4fr;
+	border: solid;
+	border-width: 3pt;
+	border-color: white;
+	border-radius: 20pt;
+}
+
+div.DS-stats p {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	font-size: 1.5vw;
+	margin-right: 5vw;
+	margin-left: 5vw;
 }

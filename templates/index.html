@@ -17,11 +17,13 @@
 				<a href="http://127.0.0.1:5000/">
 				<p class="title-s">⮚ HOME ⮘</p>
 				</a>
-				{% for i in Cont["grades"].keys() %}
-				<a href="http://127.0.0.1:5000/DS/{{i}}">
-				<p class="title-ss">➤ {{ i }}</p>
-				</a>
-				{% endfor %}
+				<div class="nav-wrapper">
+					{% for i in Cont["grades"].keys() %}
+						<a href="http://127.0.0.1:5000/DS/{{i}}">
+						<p class="title-ss">➤ {{ i }}</p>
+						</a>
+					{% endfor %}
+				</div>
 			</div>
 
 			<div class="grades">
@@ -53,6 +55,12 @@
 					</select>
 					<button type="submit">Ajouter la note</button>
 				</form>
+			</div>
+			<div class="DS-stats">
+				<p>moyenne : {{ Cont["grades"][DS][2] }}</p>
+				<p>ecart type : {{ Cont["grades"][DS][3] }}</p>
+				<p>max : {{ Cont["grades"][DS][0][0][0] }}</p>
+				<p>min: {{ Cont["grades"][DS][0][-1][0] }}</p>
 			</div>
 		</div>
 	</body>
