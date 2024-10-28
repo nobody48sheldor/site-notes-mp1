@@ -25,6 +25,7 @@ div.user{
 }
 
 div.navigation {
+	transition: 0.3s ease-in-out;
 	margin-left: 20pt;
 	align-items: center;
 	display: flex;
@@ -37,6 +38,12 @@ div.navigation {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
+	box-shadow: 0pt 0px 20pt white;
+}
+
+div.navigation:hover {
+	transform: scale(1.02);
+	box-shadow: 0pt 0px 50pt rgba(145, 92, 182, 1);
 }
 
 div.nav-wrapper p {
@@ -48,7 +55,8 @@ div.nav-wrapper p:hover {
 }
 
 
-div.add-grade{
+div.add-grade {
+	transition: 0.3s ease-in-out;
 	margin-right: 20pt;
 	display: flex;
 	flex-direction: vertical;
@@ -61,7 +69,14 @@ div.add-grade{
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
+	box-shadow: 0pt 0px 20pt white;
 }
+
+div.add-grade:hover {
+	transform: scale(1.02);
+	box-shadow: 0pt 0px 50pt rgba(145, 92, 182, 1);
+}
+
 
 
 div.add-grade p {
@@ -70,6 +85,7 @@ div.add-grade p {
 }
 
 div.home {
+	transition: 0.3s ease-in-out;
 	align-items: center;
 	justify-content: center;
 	grid-area: 2 / 2 / 7 / 4;
@@ -79,13 +95,21 @@ div.home {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
+	box-shadow: 0pt 0px 20pt white;
 }
+
+div.home:hover {
+	transform: scale(1.02);
+	box-shadow: 0pt 0px 50pt rgba(145, 92, 182, 1);
+}
+
 
 div.home div {
 	margin: 10pt;
 }
 
 div.grades {
+	transition: 0.3s ease-in-out;
 	align-items: center;
 	justify-content: center;
 	grid-area: 2 / 2 / 7 / 4;
@@ -96,6 +120,15 @@ div.grades {
 	border-color: white;
 	border-radius: 20pt;
 	height:5fr;
+	box-shadow: 0pt 0px 20pt white;
+}
+
+div.grades:hover {
+	box-shadow: 0pt 0px 50pt rgba(145, 92, 182, 1);
+}
+
+div.grades:has( + div:hover) {
+	box-shadow: 0pt 0px 50pt rgba(145, 92, 182, 1);
 }
 
 div.grades-grades {
@@ -146,6 +179,7 @@ div.fig {
 }
 
 img.figure {
+	transition: 0.3s ease-in-out;
 	height: 16vw;
 	justify-content: center;
 	align-items: center;
@@ -153,7 +187,14 @@ img.figure {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
+	box-shadow: 0pt 0px 20pt white;
 }
+
+img.figure:hover {
+	transform: scale(1.05);
+	box-shadow: 0pt 0px 50pt rgba(145, 92, 182, 1);
+}
+
 
 a {
 	transition: 0.3s ease-in-out;
@@ -288,7 +329,6 @@ div.stats {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
-
 }
 
 div.wrapper {
@@ -303,7 +343,6 @@ div.wrapper {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
-
 }
 
 div.stats div.wrapper p {
@@ -357,7 +396,16 @@ div.DS-stats {
 	border-width: 3pt;
 	border-color: white;
 	border-radius: 20pt;
+	box-shadow: 0pt 0px 20pt white;
+	transition: 0.3s ease-in-out;
 }
+
+div.DS-stats:hover {
+	transform: scale(1.02);
+	box-shadow: 0pt 0px 50pt rgba(145, 92, 182, 1);
+}
+
+
 
 div.DS-stats p {
 	display: flex;
