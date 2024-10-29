@@ -32,6 +32,11 @@
 			</div>
 			<div class="add-grade">
 					<button onclick="window.open('http://google.com','_blank')">Comment ajouter une note ?</button>
+			</div>
+			<div class="user-search">
+				<form action="#" method="post">
+					<input id="user" type="text" name="user" placeholder="id de l'utilisateur" value="{{ request.form['user'] }}" autocomplete="off">
+					<button type="submit">acceder à la page</button>
 				</form>
 			</div>
 

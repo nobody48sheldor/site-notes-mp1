@@ -4,48 +4,31 @@ import sys
 import ast
 
 # Get command line arguments
-args = sys.argv[1:]
+args = sys.argv[1]
+#print("args : ",args)
 
-# Initialize variables for list and string
-data = None
-db = None
-
-# Process arguments
-if len(args) >= 2:
-    try:
-        # The first argument is expected to be a list in string format
-        data = ast.literal_eval(args[0])
-        
-        # The second argument is expected to be a string
-        db = args[1]
-
-        print(f"Received list: {data}")
-        print(f"Received string: {db}")
-
-    except (ValueError, SyntaxError) as e:
-        print(f"Error parsing input: {e}")
-else:
-    print("Insufficient arguments provided. Please provide a list and a string.")
-
+data = ast.literal_eval(args)
 
 plt.style.use('dark_background')
 
 static_path = "static/"
 
-def plot_data(data,db):
+def plot_data(data):
 	plt.clf()
-	arr_x = np.linspace(0,20,41)
-	arr_y = [0 for i in arr_x]
-	for i in data:
-		arr_y[int(2*i[0])] += 1
-	m = max(arr_y)
-	arr_y0 = np.array(arr_y)
-	arr_y = np.array([None if i==0 else i for i in arr_y])
-	print(arr_y)
-	plt.xlim(0,20)
-	plt.ylim(0, m+1)
-	plt.title("distribution de : "+db, fontsize=30, color="white", fontweight='bold')
-	plt.bar(arr_x, arr_y0, width=0.4, align='center', color='blue', edgecolor='white', linewidth=1.4)
-	plt.savefig(static_path+db+".png")
+	print("DATA : ", data)
+	arr_x = data[2]
+	arr_y = []
+	for i in range(len(data[2])):
+		try:
+			if data[1][i][1] in data[2]:
+				arr_y.append(float(data[1][i][0]))
+			else:
+				arr_y.append(0)
+		except:
+			arr_y.append(0)
+	print("arr_y = ",arr_y)
+	plt.title("notes de "+str(data[0]), fontsize=20, color="white", fontweight='bold')
+	plt.bar(arr_x, arr_y, width=0.4, align='center', color='blue', edgecolor='white', linewidth=1.4)
+	plt.savefig(static_path+"user-"+str(data[0])+".png")
 
-plot_data(data,db)
+plot_data(data)

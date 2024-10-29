@@ -43,18 +43,22 @@
 				<img class="figure" src="{{ url_for('static', filename=DS+'.png') }}"></img>
 			</div>
 			<div class="add-grade">
+				<div class="horizontal">
 					<p class="title-ss">Rajoutes une note</p>
-				<form action="#" method="post">
-					<input id="grade" type="text" name="grade" placeholder="mets ta note" value="{{ request.form['grade'] }}" autocomplete="off">
-					<input id="id_grade" type="text" name="id_grade" placeholder="ton ID" value="{{ request.form['id_grade'] }}" autocomplete="off">
-					<select name="DS_add">
-						<option disabled selected hidden>DS</option>
-						{% for i in Cont["grades"].keys() %}
-						<option  value="{{ i }}">{{ i }}</option>
-						{% endfor %}
-					</select>
-					<button type="submit">Ajouter la note</button>
-				</form>
+				<div class="vertical">
+					<form action="#" method="post">
+						<input id="grade" type="text" name="grade" placeholder="mets ta note" value="{{ request.form['grade'] }}" autocomplete="off">
+						<input id="id_grade" type="text" name="id_grade" placeholder="ton ID" value="{{ request.form['id_grade'] }}" autocomplete="off">
+						<select name="DS_add">
+							<option disabled selected hidden>DS</option>
+							{% for i in Cont["grades"].keys() %}
+								<option  value="{{ i }}">{{ i }}</option>
+							{% endfor %}
+						</select>
+						<button type="submit">Ajouter la note</button>
+					</form>
+					</div>
+				</div>
 			</div>
 			<div class="DS-stats">
 				<p>moyenne : {{ Cont["grades"][DS][2] }}</p>
